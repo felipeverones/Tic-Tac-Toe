@@ -7,7 +7,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url(http://cdn.backgroundhost.com/backgrounds/subtlepatterns/green_gobbler.png);
+    background-image: url("../bg/green_gobbler.png");
 }
 
 .gui{
