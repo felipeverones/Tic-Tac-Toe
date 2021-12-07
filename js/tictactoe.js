@@ -21,6 +21,8 @@ const Tictactoe = () => {
     const checkMatching = (val1, val2, val3) => {
         if(game[val1] === game[val2] && game[val2] ===game[val3]){
             return game[val1]
+        }else{
+            return false
         }
     }
 
@@ -79,7 +81,7 @@ const Tictactoe = () => {
                             elem.style.pointerEvents = "none"
 
                             
-                            /* let timer =  */setTimeout(() => {
+                             let timer =  setTimeout(() => {
                                 
                                 const cell = emptyTiles[Math.floor(Math.random() * emptyTiles.length)]
                                 
@@ -87,9 +89,16 @@ const Tictactoe = () => {
                                     clickedBox(cell)
                                     
                                 }
-                                else{
-                                    play()
-                                    //clearTimeout(timer)
+                                else if((checkMatching(1,2,3) ||
+                                        checkMatching(4,5,6) ||
+                                        checkMatching(7,8,9) ||
+                                        checkMatching(1,5,9) ||
+                                        checkMatching(3,5,7) ||
+                                        checkMatching(1,4,7) ||
+                                        checkMatching(2,5,8) ||
+                                        checkMatching(3,6,9)) == false)  {
+                                    self.turn = ''
+                                    self.text = texts[3]
                                     
                                 }
                                 
